@@ -22,13 +22,21 @@
 
 * 다음과 같이 출력된다.(프로젝트 로그파일 중)
 ```
-> 2021-08-13 16:32:35,088 [SharedMem.py:__new__:27] [INFO] >> <SharedMem.SharedMem object at 0x0000029623DE4C40> 
-> 2021-08-13 16:32:35,089 [TradeLogic.py:__init__:28] [INFO] >> <TradeLogic.TradeLogic object at 0x0000029623DE4B20> 
-> 2021-08-13 16:32:35,089 [GetPutDB.py:__init__:30] [INFO] >> <GetPutDB.GetPutDB object at 0x0000029623DE4C10> 
-> 2021-08-13 16:32:35,090 [RunThread.py:call_price:75] [INFO] >> thread start 
-> 2021-08-13 16:32:35,090 [RunThread.py:update_info:60] [INFO] >> thread start 
-> 2021-08-13 16:32:35,091 [SharedMem.py:__new__:27] [INFO] >> <SharedMem.SharedMem object at 0x0000029623DE4C40> 
-> 2021-08-13 16:32:35,091 [SharedMem.py:update_current_stock_price:103] [INFO] >> Shared Memory Updated: Price 
-> 2021-08-13 16:32:35,092 [SharedMem.py:update_current_stock_quantity:112] [INFO] >> Shared Memory Updated: Quantity 
-> 2021-08-13 16:32:35,093 [SharedMem.py:update_trade_volume:121] [INFO] >> Shared Memory Updated: Total Trade Volume(should be presented once a day) 
+2021-09-06 22:26:02,816 [RunThread.py        :<module>             :181  ] [INFO] >> <SharedMem.SharedMem object at 0x03C2E8E0> 
+2021-09-06 22:26:02,816 [SharedMem.py        :add                  :66   ] [INFO] >> <Stocks.Stock object at 0x03C2E9E8> 
+2021-09-06 22:26:02,817 [Stocks.py           :__init__             :52   ] [INFO] >> Name: 5930StockValue <utilsLT.QueueLT object at 0x03C2EA18> 
+2021-09-06 22:26:02,817 [utilsLT.py          :__init__             :43   ] [INFO] >> 5930StockValue Queue init, size: 20 
+2021-09-06 22:26:02,817 [Stocks.py           :__init__             :57   ] [INFO] >> Name: 5930TradeVolume <utilsLT.QueueLT object at 0x03C2EA00> 
+2021-09-06 22:26:03,717 [SendRequest2Api.py  :Send_Request_Throttle:98   ] [INFO] >> Name: Queue4Request2Api <utilsLT.QueueLT object at 0x03C2E940> 
+2021-09-06 22:26:03,717 [utilsLT.py          :__init__             :46   ] [WARNING] >> Queue4Request2Api Queue Called Again 
+2021-09-06 22:26:02,818 [utilsLT.py          :__init__             :43   ] [INFO] >> 5930PriceData Queue init, size: 64 
+2021-09-06 22:26:02,819 [SharedMem.py        :add                  :66   ] [INFO] >> Stock init: 5930 <Stocks.Stock object at 0x03C2E9E8> 
+2021-09-06 22:26:02,819 [SharedMem.py        :add                  :68   ] [INFO] >> New Stock Instance: 5930 
+2021-09-06 22:26:02,819 [SharedMem.py        :request_initial_info :151  ] [INFO] >> Info Request Pushed {'StockID': 5930, 'Buy': -2, 'Sell': 0} 
+2021-09-05 20:58:42,034 [GetPutDB.py         :exception_handling   :271  ] [ERROR] >> Exception Occured, table tHist000080PriceInfo has 8 columns but 7 values were supplied 
+2021-09-05 20:58:42,035 [Stocks.py           :stock_volume         :272  ] [INFO] >> Stock ID: 80 Total Stock Volume Updated and Enqueued: 406271 
 ```
+
+### Update Log
+ * 2021.08.15 Logger 클래스 등록
+ * 2021.09.13 파일 및 폴더 자동생성기능 추가/구조 통일을 통해 가독성 향상
